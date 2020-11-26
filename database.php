@@ -1,5 +1,5 @@
 <?php
-$password="";
+$password="x19205121";
 $host = "localhost"; 
 $dbname = "ankitdb"; 
  
