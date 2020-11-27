@@ -19,7 +19,7 @@ artifacts:
     - account.php
     - register.php
     - delete.php
-    - style.cc
+    - style.css
     - user_img.png
     - pencil.png
     - bin.png
