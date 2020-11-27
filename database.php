@@ -1,13 +1,13 @@
 <?php
 $password="x19205121";
-$host = "localhost"; 
-$dbname = "ankitdb"; 
+$host = "busticketdb.ckdlhcaxf9fi.us-east-1.rds.amazonaws.com"; 
+$dbname = "busticket"; 
  
 $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'); 
  
     try { 
 
-        $database = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", "root", $password, $options); 
+        $database = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", "busticket", $password, $options); 
         
     } catch(PDOException $ex) { 
 
