@@ -1,0 +1,25 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - echo "Enter in prebuild phase";
+  build:
+    commands:
+      - echo "Enter in build phase"
+  post_build:
+    commands:
+      - echo "Enter in post-build phase"
+artifacts:
+  files:
+    - database.php
+    - date_change.php
+    - index.php
+    - login.php
+    - myticket.php
+    - account.php
+    - register.php
+    - delete.php
+    - style.cc
+    - user_img.png
+    - pencil.png
+    - bin.png
