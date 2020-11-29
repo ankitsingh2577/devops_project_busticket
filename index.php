@@ -74,7 +74,7 @@ if (!empty($_POST)) {
 <div><a class="ticket" style="text-decoration:none" href="myticket.php">My Ticket</a></div>
 <div><a class="my-account" style="text-decoration:none" href="account.php">Account</a></div>
     
-    <div class="tab-header"><h1 style="text-align: center; font-weight: bold; color: #FFFFFF; font-family: sans-serif; margin-top: -46px";>! Welcome to Bus Ticket Booking System !</h1></div>
+    <div class="tab-header"><h1 style="text-align: center; font-weight: bold; color: #FFFFFF; font-family: sans-serif; margin-top: -46px";>! Welcome to Ankit Bus Ticket Booking System !</h1></div>
     <div><p class="book-ticket">BOOK TICKET</p></div>
     <div class="home-container">
         <div class="ticket-container">
