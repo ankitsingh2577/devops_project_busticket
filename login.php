@@ -41,6 +41,7 @@ if (!empty($_POST)) {
     }
   else{
       echo "Invalid password";
+	header("Location: login.php");   
     }
   }
 else{?>
