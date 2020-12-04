@@ -42,7 +42,7 @@ if (!empty($_POST)) {
   else{
 	  echo '<script>alert("Invalid password")</script>'; 
       //echo "Invalid password";
-	header("Location: login.php");   
+	echo 'window.location.href = "login.php";';   
     }
   }
 else{?>
