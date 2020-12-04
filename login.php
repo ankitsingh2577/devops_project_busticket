@@ -40,9 +40,10 @@ if (!empty($_POST)) {
         header("Location: index.php");      
     }
   else{
-	  echo '<script>alert("Invalid password")</script>'; 
-      //echo "Invalid password";
-	echo 'window.location.href = "login.php";';   
+	echo '<script type="text/javascript">'; 
+        echo 'alert("Invalid password");'; 
+        echo 'window.location.href = "login.php";';
+        echo '</script>'; 
     }
   }
 else{?>
