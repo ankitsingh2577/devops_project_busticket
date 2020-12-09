@@ -21,6 +21,7 @@ $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
     // sets an atribute on the database handle to fetch array index by column name
     $database->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC); 
  
+  //automatically escape string
     if(function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc()) { 
         function undo_magic_quotes_gpc(&$array) { 
             foreach($array as &$value) { 
@@ -28,6 +29,7 @@ $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
                     undo_magic_quotes_gpc($value); 
                 } 
                 else { 
+                 //Un-quotes a quoted string
                     $value = stripslashes($value); 
                 } 
             } 
