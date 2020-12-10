@@ -88,6 +88,7 @@ else{ ?>
     
 </body>
 	<script>
+		// Flush Cookies
   function logout_cookie(){
     document.cookie = "name" + "=;expires=Thu, 25 march 1999 00:00:00 GMT; path=/"
     document.cookie = "email" + "=;expires=Thu, 25 march 1999 00:00:00 GMT; path=/"
