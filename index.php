@@ -1,20 +1,17 @@
 <?php
-//import the config,php file to establish database connectivity
-
+//Import the database file to establish connectivity with database
 require('database.php');
 //turn on buffer output
 ob_start();
-
+//Retrive email from cookies
 $email=$_COOKIE['email'];
 
-//retrive name & email from cookies
+// Redirect to login page if cookie is empty
 if($_COOKIE['email']==""){
-
   header("Location: login.php");
 }
-//If cookies is present then page will load
+
 else{
-// If form submitted, insert values into the database.
 
 if (!empty($_POST)) {
 
@@ -22,6 +19,7 @@ if (!empty($_POST)) {
     
     $query = "INSERT INTO `book_ticket` (`name`, `email`, `mobile_number`, `origin`, `destination`, `date`, `ticket_number`) VALUES (:name, :email, :mobile, :origin, :destination, :date, :ticket)";
     $query_params = array(
+	    //Write data
 	':name' => $_POST['name'],
         ':email' => $_COOKIE['email'],
 	':mobile' => $_POST['mobile_number'],
@@ -56,7 +54,7 @@ if (!empty($_POST)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>index page</title>
-    
+    <!-- Loads the stylesheet style.css for colourful GUI with diffrent fonts and layout -->
     <link rel="stylesheet" href="style.css">
      <script type = "text/javascript">
       history.pushState(null, null, location.href);
@@ -114,6 +112,7 @@ if (!empty($_POST)) {
 </body>
 <script>
   function logout_cookie(){
+	  // Flush Cookies
     document.cookie = "name" + "=;expires=Thu, 25 march 1999 00:00:00 GMT; path=/"
     document.cookie = "email" + "=;expires=Thu, 25 march 1999 00:00:00 GMT; path=/"
     document.cookie = "mobile" + "=;expires=Thu, 25 march 1999 00:00:00 GMT; path=/"
