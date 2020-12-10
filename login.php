@@ -1,11 +1,12 @@
 <?php
-//import database config.php file
+//Import the database file to establish connectivity with database
 require('database.php');
 //turn on buffer output
 ob_start();
-// If form submitted, insert values into the database.
+
 if (!empty($_POST)) {
     $response = array("error" => FALSE);
+	//Write data
     $email = $_POST['email'];
     $password=$_POST['password'];
     
@@ -33,6 +34,7 @@ if (!empty($_POST)) {
     $check_pass=strcmp($hash_password,$row['password']);
 	
     if ($check_pass==0) {
+	    // Set Cookies, to identify specific user
 	setcookie("name", "$name", time()+30*24*60*60, "/");
         setcookie("mobile", "$mobile", time()+30*24*60*60, "/");
         setcookie("email", "$email", time()+30*24*60*60, "/");
@@ -55,9 +57,10 @@ else{?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign in</title>
-    
+        <!-- Loads the stylesheet style.css for colourful GUI with diffrent fonts and layout -->
     <link rel="stylesheet" href="style.css">
     <script type = "text/javascript">
+	    //Disables the back press option
       history.pushState(null, null, location.href);
       history.back(); history.forward();
       window.onpopstate = function () { history.go(1); };
