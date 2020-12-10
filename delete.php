@@ -1,5 +1,7 @@
 <?php
+//Import the database file to establish connectivity with database
 require('database.php');
+//Turn on buffer output
 ob_start();
 
 if (!empty($_GET)) {
@@ -8,10 +10,10 @@ if (!empty($_GET)) {
         $query = "DELETE FROM book_ticket WHERE ticket_number= :ticket";
 	
 	$query_params = array(
-        ':ticket' => $_GET['ticket_number']
+        ':ticket' => $_GET['ticket_number'] //Read ticket
     );
 	try {
-        $stmt = $database->prepare($query);
+        $stmt = $database->prepare($query); 
         $result = $stmt->execute($query_params);
 }
 	catch (PDOException $ex) {
