@@ -1,12 +1,14 @@
 <?php
+//Import the database file to establish connectivity with database
 require('database.php');
+//Turn on buffer output
 ob_start();
    $email=$_COOKIE['email'];
-// If cookies is empty them redirect to login page
+// Redirect to login page if cookie is empty
 if($_COOKIE['email']==""){
   header("Location: login.php");
 }
-//If cookies is present then page will load
+
 else{ 
  
 	if (!empty($_POST)) {
@@ -14,8 +16,8 @@ else{
     $query = "UPDATE book_ticket SET date= :date WHERE ticket_number= :ticket";
 	
 		$query_params = array(
-        ':date' => $_POST['date'],
-	':ticket' => $_COOKIE['ticket']		
+        ':date' => $_POST['date'], 
+	':ticket' => $_COOKIE['ticket']	// Retrive ticket from Cookies
     );	
 	try {
         $stmt = $database->prepare($query);
@@ -41,9 +43,10 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Ticket Page</title>
-    
+    <!-- Loads the stylesheet style.css for colourful GUI with diffrent fonts and layout -->
     <link rel="stylesheet" href="style.css">
     <script type = "text/javascript">
+	    //Disables the back press option 
       history.pushState(null, null, location.href);
       history.back(); history.forward();
       window.onpopstate = function () { history.go(1); };
@@ -77,6 +80,7 @@ else{
 </body>
 	<script>
   function logout_cookie(){
+	  // Flush Cookies
     document.cookie = "name" + "=;expires=Thu, 25 march 1999 00:00:00 GMT; path=/"
     document.cookie = "email" + "=;expires=Thu, 25 march 1999 00:00:00 GMT; path=/"
     document.cookie = "mobile" + "=;expires=Thu, 25 march 1999 00:00:00 GMT; path=/"
