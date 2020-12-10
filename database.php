@@ -35,9 +35,9 @@ $options = array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
             } 
         } 
  
-        undo_magic_quotes_gpc($_POST); 
-        undo_magic_quotes_gpc($_GET); 
-        undo_magic_quotes_gpc($_COOKIE); 
+        undo_magic_quotes_gpc($_POST); // removes all slashes from $ _POST
+        undo_magic_quotes_gpc($_GET);  // removes all slashes from $ _GET
+        undo_magic_quotes_gpc($_COOKIE); // removes all slashes from $ _COOKIE
     } 
  
     header('Content-Type: text/html; charset=utf-8'); 
