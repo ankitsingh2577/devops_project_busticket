@@ -13,7 +13,6 @@ This project has been hosted on AWs Beanstalk and also implemented CI/Cd on it.
 4. View Your Tickets
 5. Change Travel Date
 6. Delete Ticket
-7. Trip Management
 
 
 ##Requirements
@@ -23,15 +22,24 @@ This project has been hosted on AWs Beanstalk and also implemented CI/Cd on it.
 
 ## Installation
 
-To use this project have to setup the config:
+**To locally Host the Project** 
 
-    create a database in MySQL server.
+Unzip the project and Paste it in htdocs folder
+
+To use this project have to setup the Database:
+
+    create a database in MySQL server named ankitdb.
 
 Next, you should replace the database file
 
     open database.php file
     change the database credentials with yours
 
-Finally, you should import the sql file to your created database:
+You should import the sql file to your created database:
 
     import ankitdb.sql file via phpmyadmin or any other tools
+
+Finally run the project Using:
+    
+    http://localhost/"name-of-the-project"/login.php
+    
