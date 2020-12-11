@@ -4,7 +4,7 @@
 ## Introduction
 
 Bus Ticket Reservation System is an automated system for purchasing online bus tickets.
-This project has been hosted on AWs Beanstalk and also implemented CI/Cd on it. 
+This project has been hosted on AWs Beanstalk using CodePipeline and CodeBuild to achive continuous integrationon (CI) and continuous development. 
 
 ##Features
 1. Online Ticket Booking
@@ -39,7 +39,43 @@ You should import the sql file to your created database:
 
     import ankitdb.sql file via phpmyadmin or any other tools
 
-Finally run the project Using:
+Finally View the project Using:
     
     http://localhost/"name-of-the-project"/login.php
+    
+    
+    
+**To Host the Project on AWS (WIth CI/CD)** 
+
+Create Elastic Beanstalk Environment on aws for PHP
+    
+Create Codepipeline to connect your Github repository with AWS
+    
+    Use Github Webhook to trigger codbuild when you do any commits
+
+Create CodeBuild to Build your project (CI)
+
+    Specify the buildspec.yml file in the codebuild 
+    
+    buildspec.yml contains files that you want our build to produce
+    
+    Connect codebuild with Elastic beanstalk environment you have created earlier to deploy that produced file
+
+Create mysql database instance on AWS RDS (Relational Database Service)
+ 
+    Ensure Database is publicly accesible
+    Note the RDS-mysql database endpoint and port number
+      
+Connect to mysql DB instance to Confiqure database (MySql workbench)   
+    
+    Enter the DB endpoint, port number and password to connect
+    create a database named ankitdb. 
+    import ankitdb.sql to create tables
+
+Replace the database file:
+
+    open database.php file
+    change the database credentials with yours (Host name should be AWS database endpoint)
+
+Finally View the project Using the link AWS Elastic Beanstalk provided
     
