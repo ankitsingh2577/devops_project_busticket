@@ -107,6 +107,7 @@ else{ ?>
 					<tr>
 					    <th scope="row"><a href="date_change.php"><img src="pencil.png" alt="pencil" class="pencil"><?php 
 					    $ticket=$row['ticket_number'];
+	       				    //Set Cookie for Ticket number
 					    setcookie("ticket", "$ticket", time()+30*24*60*60, "/");?> </img></a>
 					    </th>
 					<td>
