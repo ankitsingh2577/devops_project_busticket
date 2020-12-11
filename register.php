@@ -1,10 +1,9 @@
 <?php
-//import database config.php file
+//Import the database file to establish connectivity with database
 require('database.php');
-//turn on buffer output
+//Turn on buffer output
 ob_start();
 
-// If form submitted, insert values into the database.
 if (!empty($_POST)) {
   $response = array("error" => FALSE);
     $email = $_POST['email'];
@@ -13,8 +12,8 @@ if (!empty($_POST)) {
     $query_params = array(
         ':name' => $_POST['name'],
         ':email' => $_POST['email'],
-	':mobile' => $_POST['mobile_number'],   
-        ':password' => hash("sha512",$_POST['password']),
+	':mobile' => $_POST['mobile_number'],  
+        ':password' => hash("sha512",$_POST['password']), // Insert hashed Password (sha512)
     );
     try {
         $stmt = $database->prepare($query);
@@ -42,10 +41,10 @@ if (!empty($_POST)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign up</title>
-    
+    <!-- Loads the stylesheet style.css for colourful GUI with diffrent fonts and layout -->
     <link rel="stylesheet" href="style.css">
-    
      <script type = "text/javascript">
+	 //Disables the back press option 
       history.pushState(null, null, location.href);
       history.back(); history.forward();
       window.onpopstate = function () { history.go(1); };
