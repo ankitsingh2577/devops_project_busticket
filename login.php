@@ -1,7 +1,7 @@
 <?php
 //Import the database file to establish connectivity with database
 require('database.php');
-//turn on buffer output
+//Turn on buffer output
 ob_start();
 
 if (!empty($_POST)) {
@@ -30,8 +30,8 @@ if (!empty($_POST)) {
 	$name=$row['name'];
         $email=$row['email'];
         $mobile=$row['mobile_number'];
-        $hash_password=hash("sha512", $password);
-    $check_pass=strcmp($hash_password,$row['password']);
+        $hash_password=hash("sha512", $password); // Hash Password (sha512)
+    $check_pass=strcmp($hash_password,$row['password']); // Validate hash password with the database password
 	
     if ($check_pass==0) {
 	    // Set Cookies, to identify specific user
