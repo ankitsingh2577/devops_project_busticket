@@ -39,7 +39,7 @@ You should import the sql file to your created database
 
     import ankitdb.sql file via phpmyadmin or any other tools
 
-Finally View the project using
+Finally, view the project using
     
     http://localhost/"name-of-the-project"/login.php
     
@@ -77,5 +77,5 @@ Replace the database file:
     open database.php file
     change the database credentials with yours (Host name should be AWS database endpoint)
 
-Finally View the project Using the link AWS Elastic Beanstalk provided
+Finally, view the project Using the link AWS Elastic Beanstalk provided
     
