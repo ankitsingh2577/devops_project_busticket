@@ -43,7 +43,7 @@ Finally View the project using
     
     http://localhost/"name-of-the-project"/login.php
     
-<br /><br />   
+<br />  
     
 **To Host the Project on AWS (WIth CI/CD)** 
 
