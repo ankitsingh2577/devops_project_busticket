@@ -26,7 +26,7 @@ if (!empty($_POST)) {
         ':origin' => $_POST['origin'],
         ':destination' => $_POST['destination'],
         ':date' => $_POST['date'],
-	':ticket' => random_int(100000000, 999999999),   
+	':ticket' => random_int(100000000, 999999999),   // Generate Randon number
     );
 	
     try {
@@ -57,6 +57,7 @@ if (!empty($_POST)) {
     <!-- Loads the stylesheet style.css for colourful GUI with diffrent fonts and layout -->
     <link rel="stylesheet" href="style.css">
      <script type = "text/javascript">
+     //Disables the back press option
       history.pushState(null, null, location.href);
       history.back(); history.forward();
       window.onpopstate = function () { history.go(1); };
