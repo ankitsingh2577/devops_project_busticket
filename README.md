@@ -26,7 +26,7 @@ This project has been hosted on AWs Beanstalk using CodePipeline and CodeBuild t
 
 Unzip the project and Paste it in htdocs folder
 
-To use this project have to setup the Database:
+To use this project have to setup the Database
 
     create a database in MySQL server named ankitdb.
 
@@ -35,11 +35,11 @@ Next, you should replace the database file
     open database.php file
     change the database credentials with yours
 
-You should import the sql file to your created database:
+You should import the sql file to your created database
 
     import ankitdb.sql file via phpmyadmin or any other tools
 
-Finally View the project Using:
+Finally View the project using
     
     http://localhost/"name-of-the-project"/login.php
     
