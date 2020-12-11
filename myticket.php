@@ -1,17 +1,17 @@
 <?php
-//import the config,php file to establish database connectivity
+//Import the database file to establish connectivity with database
 require('database.php');
-//turn on buffer output
+//Turn on buffer output
 ob_start();
 
-//retrive professor assigned lecture from cookies
+//Retrive email from cookies
 $email=$_COOKIE["email"];
 
 // If cookies is empty them redirect to login page
 if($email==""){
   header("Location: login.php");
 }
-//If cookies is present then page will load
+//Redirect to login page if cookie is empty
 else{ ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,11 +19,11 @@ else{ ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Ticket</title>
-    
+    <title>My Ticket</title> 
+    <!-- Loads the stylesheet style.css for colourful GUI with diffrent fonts and layout -->
     <link rel="stylesheet" href="style.css">
-     
      <script type = "text/javascript">
+     //Disables the back press option
       history.pushState(null, null, location.href);
       history.back(); history.forward();
       window.onpopstate = function () { history.go(1); };
@@ -50,6 +50,7 @@ else{ ?>
         	<form action="" method="post">
         		        <?php
 	
+	//Stores users data in array
 	$response = array("error" => FALSE);
 	$query = "SELECT * FROM book_ticket WHERE email = :email";
         $query_params = array(
@@ -135,6 +136,7 @@ else{?>
 </body>
 <script>
   function logout_cookie(){
+		// Flush Cookies
     document.cookie = "name" + "=;expires=Thu, 25 march 1999 00:00:00 GMT; path=/"
     document.cookie = "email" + "=;expires=Thu, 25 march 1999 00:00:00 GMT; path=/"
     document.cookie = "mobile" + "=;expires=Thu, 25 march 1999 00:00:00 GMT; path=/"
