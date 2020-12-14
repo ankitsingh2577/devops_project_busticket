@@ -18,7 +18,7 @@ This project has been hosted on AWs Beanstalk using CodePipeline and CodeBuild t
 ##Requirements
 
     php: <= 7.3
-    MySql: <= 5.7
+    MySql: <= 8.0
 
 ## Installation
 
